@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MusicalStructure</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="artists_fragment">Artists</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="albums_fragment">Albums</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="songs_fragment">Songs</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="genres_fragment">Genres</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="playlists_fragment">Playlists</string>
 </resources>
