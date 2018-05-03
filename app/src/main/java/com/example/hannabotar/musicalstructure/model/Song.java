@@ -5,15 +5,17 @@ public class Song {
     private Long id;
     private Artist artist;
     private Album album;
+    private Genre genre;
     private String name;
     private Long seconds;
 
-    public Song(Long id, Artist artist, Album album, String name, Long seconds) {
+    public Song(Long id, Artist artist, Album album, String name, Long seconds, Genre genre) {
         this.id = id;
         this.artist = artist;
         this.album = album;
         this.name = name;
         this.seconds = seconds;
+        this.genre = genre;
     }
 
     public Long getId() {
@@ -54,5 +56,13 @@ public class Song {
 
     public void setSeconds(Long seconds) {
         this.seconds = seconds;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 }

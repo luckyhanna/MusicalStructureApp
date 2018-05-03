@@ -3,6 +3,7 @@ package com.example.hannabotar.musicalstructure.util;
 import com.example.hannabotar.musicalstructure.R;
 import com.example.hannabotar.musicalstructure.model.Album;
 import com.example.hannabotar.musicalstructure.model.Artist;
+import com.example.hannabotar.musicalstructure.model.Genre;
 import com.example.hannabotar.musicalstructure.model.Song;
 
 import java.util.ArrayList;
@@ -23,6 +24,10 @@ public class Util {
     public static Album mumford_album_2 = new Album(2L, mumford, "Babel", null);
     public static Album george_ezra_album_1 = new Album(3L, george_ezra, "Wanted on Voyage", null);
     public static Album netsky_album_1 = new Album(4L, netsky, "Netsky", null);
+
+    public static final Genre folk_rock = new Genre(1L, "Folk Rock");
+    public static final Genre drum_and_bass = new Genre(2L, "Drum and Bass");
+    public static final Genre blues = new Genre(2L, "Blues");
 
     public static List<Artist> getArtists() {
         List<Artist> artistList = new ArrayList<>();
@@ -52,20 +57,29 @@ public class Util {
     public static List<Song> getSongs() {
         List<Song> songList = new ArrayList<>();
 
-        songList.add(new Song(1L, mumford, mumford_album_1, "Tompkins Square Park", 312L));
-        songList.add(new Song(2L, mumford, mumford_album_1, "Believe", 220L));
-        songList.add(new Song(3L, mumford, mumford_album_1, "The Wolf", 221L));
-        songList.add(new Song(4L, mumford, mumford_album_1, "Wilder Mind", 278L));
-        songList.add(new Song(5L, mumford, mumford_album_1, "Just Smoke", 190L));
-        songList.add(new Song(6L, mumford, mumford_album_1, "Monster", 236L));
+        songList.add(new Song(1L, mumford, mumford_album_1, "Tompkins Square Park", 312L, folk_rock));
+        songList.add(new Song(2L, mumford, mumford_album_1, "Believe", 220L, folk_rock));
+        songList.add(new Song(3L, mumford, mumford_album_1, "The Wolf", 221L, folk_rock));
+        songList.add(new Song(4L, mumford, mumford_album_1, "Wilder Mind", 278L, folk_rock));
+        songList.add(new Song(5L, mumford, mumford_album_1, "Just Smoke", 190L, folk_rock));
+        songList.add(new Song(6L, mumford, mumford_album_1, "Monster", 236L, folk_rock));
 
-        songList.add(new Song(7L, rudimental, null, "Feel The Love", 245L));
+        songList.add(new Song(7L, rudimental, null, "Feel The Love", 245L, drum_and_bass));
 
-        songList.add(new Song(8L, gregory_porter, null, "Hey Laura", 212L));
+        songList.add(new Song(8L, gregory_porter, null, "Hey Laura", 212L, blues));
 
-        songList.add(new Song(9L, null, null, "Fly", 316L));
+        songList.add(new Song(9L, null, null, "Fly", 316L, null));
 
         return songList;
+    }
+
+    public static List<Genre> getGenres() {
+        List<Genre> genreList = new ArrayList<>();
+        genreList.add(folk_rock);
+        genreList.add(blues);
+        genreList.add(drum_and_bass);
+
+        return genreList;
     }
 
 }
