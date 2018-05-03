@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.albums_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.songs_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.genres_fragment));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.playlists_fragment));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
