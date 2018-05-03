@@ -27,14 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setup() {
 
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.playlists_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.artists_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.albums_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.songs_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.genres_fragment));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.playlists_fragment));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-//        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorPrimaryDarkest));
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);

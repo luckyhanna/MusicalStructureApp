@@ -12,22 +12,33 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/artist_title_text"
+            android:id="@+id/album_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Mumford and Sons"
+            tools:text="Babel"
             android:layout_margin="10dp"
             android:textSize="18sp"
             />
 
+        <TextView
+            android:id="@+id/album_artist_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Mumford and Sons"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="12sp"
+            android:layout_below="@id/album_title_text"
+            />
+
         <ImageView
-            android:id="@+id/artist_img"
+            android:id="@+id/album_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             tools:src="@drawable/mumford"
-            android:layout_below="@id/artist_title_text"
-            />
+            android:layout_below="@id/album_artist_text" />
 
         <Button
             android:layout_width="wrap_content"
@@ -37,8 +48,7 @@
             android:layout_alignParentRight="true"
             android:layout_margin="10dp"
             android:drawableLeft="@drawable/play"
-
-
+            android:drawableStart="@drawable/play"
             />
 
     </RelativeLayout>

@@ -17,14 +17,12 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new TabFragmentPlaylists();
+                return new TabFragmentArtists();
             case 1:
                 return new TabFragmentAlbums();
             case 2:
-                return new TabFragmentAlbums();
-            case 3:
                 return new TabFragmentSongs();
-            case 4:
+            case 3:
                 return new TabFragmentGenres();
             default:
                 return null;

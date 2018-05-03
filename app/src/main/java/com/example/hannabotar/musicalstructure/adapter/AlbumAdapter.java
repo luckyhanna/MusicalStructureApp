@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hannabotar.musicalstructure.R;
-import com.example.hannabotar.musicalstructure.model.Artist;
+import com.example.hannabotar.musicalstructure.model.Album;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -21,14 +21,16 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArtistAdapter extends ArrayAdapter<Artist> {
+public class AlbumAdapter extends ArrayAdapter<Album> {
 
-    @BindView(R.id.artist_img)
+    @BindView(R.id.album_img)
     ImageView imageView;
-    @BindView(R.id.artist_title_text)
-    TextView artistTitle;
+    @BindView(R.id.album_title_text)
+    TextView albumTitle;
+    @BindView(R.id.album_artist_text)
+    TextView albumArtist;
 
-    public ArtistAdapter(@NonNull Context context, @NonNull List<Artist> objects) {
+    public AlbumAdapter(@NonNull Context context, @NonNull List<Album> objects) {
         super(context, 0, objects);
     }
 
@@ -39,21 +41,22 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
 
         View gridItemView = convertView;
         if (gridItemView == null) {
-            gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.artist_item, parent, false);
+            gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.album_item, parent, false);
         }
 
         ButterKnife.bind(this, gridItemView);
 
-        Artist currentArtist = getItem(position);
-        if (currentArtist.getImageId() == null) {
-            imageView.setImageResource(R.drawable.album_default);
+        Album currentAlbum = getItem(position);
+        if (currentAlbum.getImageId() == null) {
+            imageView.setImageResource(R.drawable.album_default_2);
         } else {
-            imageView.setImageResource(currentArtist.getImageId());
+            imageView.setImageResource(currentAlbum.getImageId());
         }
         int itemWidth = getColumnWidth(((GridView) parent));
         imageView.getLayoutParams().height = itemWidth;
 
-        artistTitle.setText(currentArtist.getName());
+        albumTitle.setText(currentAlbum.getName());
+        albumArtist.setText(currentAlbum.getArtist().getName());
 
         return gridItemView;
 
