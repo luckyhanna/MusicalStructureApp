@@ -123,6 +123,18 @@ public class Util {
         return songList;
     }
 
+    public static Song getSongById(Long songId) {
+        Song found = null;
+        List<Song> songs = getSongs();
+        for (Song song : songs) {
+            if (song.getId().equals(songId)) {
+                found = song;
+                break;
+            }
+        }
+        return found;
+    }
+
     public static List<Song> getSongsByArtist(Long artistId) {
         List<Song> filtered = new ArrayList<>();
         List<Song> songs = getSongs();

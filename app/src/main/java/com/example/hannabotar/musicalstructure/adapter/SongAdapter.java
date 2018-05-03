@@ -1,15 +1,18 @@
 package com.example.hannabotar.musicalstructure.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.hannabotar.musicalstructure.R;
+import com.example.hannabotar.musicalstructure.SongActivity;
 import com.example.hannabotar.musicalstructure.model.Song;
 
 import java.util.List;
@@ -25,6 +28,8 @@ public class SongAdapter extends ArrayAdapter<Song> {
     TextView songArtist;
     @BindView(R.id.song_duration_text)
     TextView songDuration;
+    @BindView(R.id.play_song_btn)
+    Button playSongBtn;
 
     public SongAdapter(@NonNull Context context, @NonNull List<Song> objects) {
         super(context, 0, objects);
@@ -42,7 +47,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         ButterKnife.bind(this, listItemView);
 
-        Song currentSong = getItem(position);
+        final Song currentSong = getItem(position);
 
         songTitle.setText(currentSong.getName());
         if (currentSong.getArtist() != null) {
@@ -53,6 +58,15 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         String duration = getDuration(currentSong.getSeconds());
         songDuration.setText(duration);
+
+        playSongBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), SongActivity.class);
+                intent.putExtra("song_id", currentSong.getId());
+                getContext().startActivity(intent);
+            }
+        });
 
         return listItemView;
 
