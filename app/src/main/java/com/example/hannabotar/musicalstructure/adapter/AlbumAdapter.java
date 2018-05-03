@@ -1,6 +1,7 @@
 package com.example.hannabotar.musicalstructure.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,8 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.hannabotar.musicalstructure.AlbumActivity;
 import com.example.hannabotar.musicalstructure.R;
 import com.example.hannabotar.musicalstructure.model.Album;
 
@@ -30,6 +33,9 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
     @BindView(R.id.album_artist_text)
     TextView albumArtist;
 
+    @BindView(R.id.album_item)
+    RelativeLayout albumItem;
+
     public AlbumAdapter(@NonNull Context context, @NonNull List<Album> objects) {
         super(context, 0, objects);
     }
@@ -46,7 +52,7 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
         ButterKnife.bind(this, gridItemView);
 
-        Album currentAlbum = getItem(position);
+        final Album currentAlbum = getItem(position);
         if (currentAlbum.getImageId() == null) {
             imageView.setImageResource(R.drawable.album_default_2);
         } else {
@@ -57,6 +63,15 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
         albumTitle.setText(currentAlbum.getName());
         albumArtist.setText(currentAlbum.getArtist().getName());
+
+        albumItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AlbumActivity.class);
+                intent.putExtra("album_id", currentAlbum.getId());
+                getContext().startActivity(intent);
+            }
+        });
 
         return gridItemView;
 

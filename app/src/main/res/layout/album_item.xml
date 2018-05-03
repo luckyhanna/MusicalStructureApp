@@ -8,6 +8,7 @@
     >
 
     <RelativeLayout
+        android:id="@+id/album_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -40,7 +41,7 @@
             tools:src="@drawable/mumford"
             android:layout_below="@id/album_artist_text" />
 
-        <Button
+        <!--<Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -49,7 +50,7 @@
             android:layout_margin="10dp"
             android:drawableLeft="@drawable/play"
             android:drawableStart="@drawable/play"
-            />
+            />-->
 
     </RelativeLayout>
 

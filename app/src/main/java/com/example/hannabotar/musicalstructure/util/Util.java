@@ -27,7 +27,7 @@ public class Util {
 
     public static final Genre folk_rock = new Genre(1L, "Folk Rock");
     public static final Genre drum_and_bass = new Genre(2L, "Drum and Bass");
-    public static final Genre blues = new Genre(2L, "Blues");
+    public static final Genre blues = new Genre(3L, "Blues");
 
     public static List<Artist> getArtists() {
         List<Artist> artistList = new ArrayList<>();
@@ -43,6 +43,18 @@ public class Util {
         return artistList;
     }
 
+    public static Artist getArtistById(Long artistId) {
+        Artist found = null;
+        List<Artist> artists = getArtists();
+        for (Artist artist: artists) {
+            if (artist.getId().equals(artistId)) {
+                found = artist;
+                break;
+            }
+        }
+        return found;
+    }
+
     public static List<Album> getAlbums() {
 
         List<Album> albumList = new ArrayList<>();
@@ -52,6 +64,39 @@ public class Util {
         albumList.add(netsky_album_1);
 
         return albumList;
+    }
+
+    public static Album getAlbumById(Long albumId) {
+        Album found = null;
+        List<Album> albums = getAlbums();
+        for (Album album : albums) {
+            if (album.getId().equals(albumId)) {
+                found = album;
+                break;
+            }
+        }
+        return found;
+    }
+
+    public static List<Genre> getGenres() {
+        List<Genre> genreList = new ArrayList<>();
+        genreList.add(folk_rock);
+        genreList.add(blues);
+        genreList.add(drum_and_bass);
+
+        return genreList;
+    }
+
+    public static Genre getGenreById(Long genreId) {
+        Genre found = null;
+        List<Genre> genres = getGenres();
+        for (Genre genre : genres) {
+            if (genre.getId().equals(genreId)) {
+                found = genre;
+                break;
+            }
+        }
+        return found;
     }
 
     public static List<Song> getSongs() {
@@ -70,16 +115,45 @@ public class Util {
 
         songList.add(new Song(9L, null, null, "Fly", 316L, null));
 
+        songList.add(new Song(10L, george_ezra, george_ezra_album_1, "Budapest", 200L, folk_rock));
+        songList.add(new Song(11L, george_ezra, george_ezra_album_1, "Blame It on Me", 195L, null));
+
+        songList.add(new Song(12L, netsky, netsky_album_1, "Gravity", 269L, drum_and_bass));
+
         return songList;
     }
 
-    public static List<Genre> getGenres() {
-        List<Genre> genreList = new ArrayList<>();
-        genreList.add(folk_rock);
-        genreList.add(blues);
-        genreList.add(drum_and_bass);
+    public static List<Song> getSongsByArtist(Long artistId) {
+        List<Song> filtered = new ArrayList<>();
+        List<Song> songs = getSongs();
+        for (Song song : songs) {
+            if (song.getArtist() != null && song.getArtist().getId().equals(artistId)) {
+                filtered.add(song);
+            }
+        }
+        return filtered;
+    }
 
-        return genreList;
+    public static List<Song> getSongsByAlbum(Long albumId) {
+        List<Song> filtered = new ArrayList<>();
+        List<Song> songs = getSongs();
+        for (Song song : songs) {
+            if (song.getAlbum() != null && song.getAlbum().getId().equals(albumId)) {
+                filtered.add(song);
+            }
+        }
+        return filtered;
+    }
+
+    public static List<Song> getSongsByGenre(Long genreId) {
+        List<Song> filtered = new ArrayList<>();
+        List<Song> songs = getSongs();
+        for (Song song : songs) {
+            if (song.getGenre() != null && song.getGenre().getId().equals(genreId)) {
+                filtered.add(song);
+            }
+        }
+        return filtered;
     }
 
 }

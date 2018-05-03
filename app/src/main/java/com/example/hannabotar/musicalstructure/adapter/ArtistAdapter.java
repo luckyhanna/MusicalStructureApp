@@ -1,6 +1,7 @@
 package com.example.hannabotar.musicalstructure.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,10 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.hannabotar.musicalstructure.ArtistActivity;
 import com.example.hannabotar.musicalstructure.R;
 import com.example.hannabotar.musicalstructure.model.Artist;
 
@@ -27,6 +31,11 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
     ImageView imageView;
     @BindView(R.id.artist_title_text)
     TextView artistTitle;
+    /*@BindView(R.id.artist_play_btn)
+    Button artistPlay;*/
+
+    @BindView(R.id.artist_item)
+    RelativeLayout artistItem;
 
     public ArtistAdapter(@NonNull Context context, @NonNull List<Artist> objects) {
         super(context, 0, objects);
@@ -44,7 +53,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
 
         ButterKnife.bind(this, gridItemView);
 
-        Artist currentArtist = getItem(position);
+        final Artist currentArtist = getItem(position);
         if (currentArtist.getImageId() == null) {
             imageView.setImageResource(R.drawable.album_default);
         } else {
@@ -54,6 +63,23 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
         imageView.getLayoutParams().height = itemWidth;
 
         artistTitle.setText(currentArtist.getName());
+
+        /*artistPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ArtistActivity.class);
+                intent.putExtra("artist_id", currentArtist.getId());
+                getContext().startActivity(intent);
+            }
+        });*/
+        artistItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ArtistActivity.class);
+                intent.putExtra("artist_id", currentArtist.getId());
+                getContext().startActivity(intent);
+            }
+        });
 
         return gridItemView;
 
