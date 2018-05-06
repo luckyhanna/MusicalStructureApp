@@ -16,18 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Babel"
-            android:layout_margin="10dp"
-            android:textSize="18sp" />
+            android:layout_margin="@dimen/margin_10"
+            android:textSize="@dimen/text_title_18" />
 
         <TextView
             android:id="@+id/album_artist_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Mumford and Sons"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="8dp"
-            android:textSize="12sp"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:textSize="@dimen/text_normal_12"
             android:layout_below="@id/album_title_text" />
 
         <ImageView

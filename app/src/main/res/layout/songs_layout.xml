@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/songs_img"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/song_height"
         android:scaleType="centerCrop"
         tools:src="@drawable/mumford"
         android:contentDescription="@string/song_img" />
@@ -23,10 +23,10 @@
         android:id="@+id/songs_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/padding_10"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/tabSelected"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_large_16"
         android:gravity="center"
         tools:text="Mumford and Sons"/>
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/transparent"
-        android:dividerHeight="10dp"
-        android:padding="10dp" />
+        android:dividerHeight="@dimen/list_divider_10"
+        android:padding="@dimen/padding_10" />
 
 </LinearLayout>

@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Folk Rock"
-            android:layout_margin="10dp"
-            android:textSize="18sp" />
+            android:layout_margin="@dimen/margin_10"
+            android:textSize="@dimen/text_title_18" />
 
         <ImageView
             android:id="@+id/genre_img"

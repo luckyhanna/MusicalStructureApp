@@ -24,4 +24,5 @@
     <string name="album_img">album_img</string>
     <string name="artist_img">artist_img</string>
     <string name="genre_img">genre_img</string>
+    <string name="unknown_artist">Unknown artist</string>
 </resources>

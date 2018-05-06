@@ -42,7 +42,7 @@ public class SongActivity extends AppCompatActivity {
         if (song.getArtist() != null) {
             songArtist.setText(song.getArtist().getName());
         } else {
-            songArtist.setText("Unknown artist");
+            songArtist.setText(R.string.unknown_artist);
         }
         songTitle.setText(song.getName());
 
