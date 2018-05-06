@@ -5,6 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.hannabotar.musicalstructure.model.Song;
@@ -21,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.view_pager)
     ViewPager viewPager;
 
+    @BindView(R.id.now_playing_layout)
+    LinearLayout nowPlayingLayout;
     @BindView(R.id.now_playing_text)
-    TextView nowPlaying;
+    TextView nowPlayingText;
+    @BindView(R.id.now_playing_btn)
+    Button nowPlayingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +39,21 @@ public class MainActivity extends AppCompatActivity {
         setup();
     }
 
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        refreshNowPlaying();
+    }
+
     private void setup() {
 
-        Song playing = NowPlaying.INSTANCE.getSong();
-        if (playing == null) {
-            nowPlaying.setVisibility(View.INVISIBLE);
-        } else {
-            nowPlaying.setVisibility(View.VISIBLE);
-            nowPlaying.setText(playing.getName());
-        }
+        nowPlayingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NowPlaying.INSTANCE.switchPaused();
+                refreshNowPlaying();
+            }
+        });
 
         tabLayout.addTab(tabLayout.newTab().setText(R.string.artists_fragment));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.albums_fragment));
@@ -71,5 +83,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void refreshNowPlaying() {
+        Song playing = NowPlaying.INSTANCE.getSong();
+        if (playing == null) {
+            nowPlayingLayout.setVisibility(View.GONE);
+        } else {
+            nowPlayingLayout.setVisibility(View.VISIBLE);
+            Boolean paused = NowPlaying.INSTANCE.getPaused();
+            String buttonIcon = paused ? getString(R.string.play) : getString(R.string.pause);
+            String artist = playing.getArtist() != null ? playing.getArtist().getName() : "Unknown Artist";
+            String playingText = paused ? getString(R.string.paused, artist, playing.getName()) : getString(R.string.playing, artist, playing.getName());
+            nowPlayingText.setText(playingText);
+            nowPlayingButton.setText(buttonIcon);
+            nowPlayingText.setSelected(!paused);
+        }
     }
 }

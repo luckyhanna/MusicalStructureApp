@@ -1,18 +1,27 @@
-<resources>
-    <string name="app_name">MusicalStructure</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Musical Structure</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="artists_fragment">Artists</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="albums_fragment">Albums</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="songs_fragment">Songs</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="genres_fragment">Genres</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="playlists_fragment">Playlists</string>
+
+    <string name="pause">| |</string>
+    <string name="play">›</string>
+    <string name="previous">«</string>
+    <string name="next">»</string>
+    <string name="paused"><b>Paused: </b><xliff:g id="song_name" example="Mumford and Sons">%s</xliff:g> - <xliff:g id="song_name" example="Babel">%s</xliff:g></string>
+    <string name="playing"><b>Now Playing: </b><xliff:g id="song_name" example="Mumford and Sons">%s</xliff:g> - <xliff:g id="song_name" example="Babel">%s</xliff:g></string>
+
+    <string name="play_text">Play</string>
+    <string name="song_img">song_img</string>
+    <string name="album_img">album_img</string>
+    <string name="artist_img">artist_img</string>
+    <string name="genre_img">genre_img</string>
 </resources>

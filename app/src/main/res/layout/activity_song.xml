@@ -45,7 +45,8 @@
         android:scaleType="centerCrop"
         android:layout_below="@id/song_artist_text_view"
         android:layout_above="@id/song_control_buttons"
-        android:src="@drawable/album_default_2"/>
+        android:src="@drawable/album_default_2"
+        android:contentDescription="@string/song_img" />
 
     <LinearLayout
         android:id="@+id/song_control_buttons"
@@ -56,17 +57,26 @@
         android:layout_alignParentBottom="true"
         >
         <Button
+            style="@style/Base.TextAppearance.AppCompat.Button"
+            android:id="@+id/previous_song"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="«"/>
+            android:gravity="center"
+            android:text="@string/previous"/>
         <Button
+            style="@style/Base.TextAppearance.AppCompat.Button"
+            android:id="@+id/play_pause_song"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="›"/>
+            android:gravity="center"
+            tools:text="| |"/>
         <Button
+            style="@style/Base.TextAppearance.AppCompat.Button"
+            android:id="@+id/next_song"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="»"/>
+            android:gravity="center"
+            android:text="@string/next"/>
     </LinearLayout>
 
 </RelativeLayout>

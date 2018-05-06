@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:maxHeight="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <RelativeLayout
         android:id="@+id/genre_item"
@@ -18,8 +17,7 @@
             android:layout_height="wrap_content"
             tools:text="Folk Rock"
             android:layout_margin="10dp"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/genre_img"
@@ -28,19 +26,8 @@
             android:scaleType="centerInside"
             android:src="@drawable/genre_img"
             android:layout_below="@id/genre_title_text"
-            />
-
-        <!--<Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:drawableLeft="@drawable/play" />-->
+            android:contentDescription="@string/genre_img" />
 
     </RelativeLayout>
-
-
 
 </android.support.v7.widget.CardView>
