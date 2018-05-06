@@ -50,6 +50,7 @@ public class SongActivity extends AppCompatActivity {
         NowPlaying.INSTANCE.setPaused(Boolean.FALSE);
         playPauseSong.setText(R.string.pause);
 
+        previousBtn.setEnabled(false);
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +65,7 @@ public class SongActivity extends AppCompatActivity {
                 playPauseSong.setText(NowPlaying.INSTANCE.getPaused() ? R.string.play : R.string.pause);
             }
         });
+        nextBtn.setEnabled(false);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

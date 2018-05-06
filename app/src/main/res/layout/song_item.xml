@@ -49,8 +49,6 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:drawableLeft="@drawable/play"
-            android:drawableStart="@drawable/play"
             android:text="@string/play_text"
             android:textColor="@color/tabSelected" />
 
