@@ -108,6 +108,7 @@ public class Util {
         songList.add(new Song(4L, mumford, mumford_album_1, "Wilder Mind", 278L, folk_rock));
         songList.add(new Song(5L, mumford, mumford_album_1, "Just Smoke", 190L, folk_rock));
         songList.add(new Song(6L, mumford, mumford_album_1, "Monster", 236L, folk_rock));
+        songList.add(new Song(6L, mumford, mumford_album_2, "Ghosts That We Knew", 339L, null));
 
         songList.add(new Song(7L, rudimental, null, "Feel The Love", 245L, drum_and_bass));
 
@@ -119,6 +120,12 @@ public class Util {
         songList.add(new Song(11L, george_ezra, george_ezra_album_1, "Blame It on Me", 195L, null));
 
         songList.add(new Song(12L, netsky, netsky_album_1, "Gravity", 269L, drum_and_bass));
+
+        songList.add(new Song(13L, lost_frequencies, null, "Here With You", 161L, null));
+
+        songList.add(new Song(14L, sigma, null, "Nobody to Love", 243L, drum_and_bass));
+
+        songList.add(new Song(15L, gramatik, null, "Balkan Express", 212L, null));
 
         return songList;
     }
