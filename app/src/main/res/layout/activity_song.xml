@@ -30,7 +30,7 @@
         android:paddingRight="@dimen/padding_10"
         android:paddingEnd="@dimen/padding_10"
         android:paddingBottom="@dimen/padding_10"
-        android:textSize="text_subtitle_14"
+        android:textSize="@dimen/text_subtitle_14"
         android:textColor="@color/colorPrimaryLight"
         android:background="@color/colorPrimaryDark"
         android:layout_below="@id/song_title_text_view"
